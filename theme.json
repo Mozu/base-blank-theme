@@ -1,0 +1,23 @@
+{
+  "about": {
+    "name": "[name of your theme]",
+    "extends": "core4",
+    "isDesktop": true,
+    "isMobile": true
+  },
+	
+    "settings": {
+
+      
+    },
+   
+    "pageTypes": [
+
+      
+    ],
+   
+    "widgets": [
+	
+	
+	]
+}
