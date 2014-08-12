@@ -6,9 +6,11 @@ module.exports = function(grunt) {
         path = require('path'),
         async = require('async'),
         done = this.async(),
+        currentVersion = grunt.file.readJSON('package.json').version,
         self = this,
 
         applyVersion = function(newver) {
+          if (!newver) newver = currentVersion;
           var next = function(cb) {
             process.nextTick(function() {
               cb(null, true);
@@ -41,7 +43,7 @@ module.exports = function(grunt) {
               grunt.log.error(err);
               return cb(err);
             }
-            var suffix = '-' + newver;
+            var suffix = '-' + newver || currentVersion;
             self.data.filenames.forEach(function(filename) {
               var ext = path.extname(filename),
                 newName = path.basename(filename, ext) + suffix + ext;
@@ -60,7 +62,7 @@ module.exports = function(grunt) {
           }
         }
 
-        grunt.log.writeln('Updating everything to version ' + newver);
+        grunt.log.writeln('Updating everything to version ' + newver || currentVersion);
         async.parallel(toRun, function(err, allDone) {
           if (err) {
             grunt.fail.fatal(err);

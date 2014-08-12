@@ -32,5 +32,6 @@ grunt release --to <version>
 ```
 
 ### for source control versioning integration edit the following line in the gruntfile.js
-```versionCmd = ':'; // ':' returns nothing. replace with e.g. 'git describe --tags --always' or 'svn info'
+```js
+versionCmd = ':'; // ':' returns nothing. replace with e.g. 'git describe --tags --always' or 'svn info'
 ```

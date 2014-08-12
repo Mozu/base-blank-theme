@@ -118,6 +118,6 @@ grunt.initConfig({
 
   grunt.loadTasks('./tasks/');
 
-  grunt.registerTask('default', ['jsonlint', 'jshint', 'zubat', 'setver:build', 'compress', 'setver:renamezip']);
+  grunt.registerTask('default', ['jsonlint', 'jshint', 'checkreferences', 'zubat', 'setver:build', 'compress', 'setver:renamezip']);
   grunt.registerTask('release', ['jsonlint', 'jshint', 'zubat', 'setver:release', 'compress', 'setver:renamezip']);
 };

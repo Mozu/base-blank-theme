@@ -1,10 +1,10 @@
 {
   "about": {
-    "name": "[name of your theme]",
-    "extends": "core4",
+    "name": "Your Theme",
+    "extends": "core5",
     "isDesktop": true,
     "isMobile": true,
-    "version": ""
+    "version": "0.1.0"
   },
   "settings": {},
   "pageTypes": [],
