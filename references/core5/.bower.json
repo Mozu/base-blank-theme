@@ -1,0 +1,41 @@
+{
+  "name": "mozu-core-theme",
+  "version": "5.0.0",
+  "devDependencies": {
+    "backbone": "~1.1",
+    "underscore": "~1.6",
+    "bootstrap": "~3.2",
+    "jquery.cookie": "~1.4",
+    "jquery-colorbox": "~1.5",
+    "typeahead.js": "~0"
+  },
+  "ignore": [
+    "/.*",
+    "tasks"
+  ],
+  "main": "*",
+  "exportsOverride": {
+    "bootstrap": {
+      "js": [
+        "js/affix.js",
+        "js/popover.js",
+        "js/tooltip.js",
+        "js/scrollspy.js"
+      ]
+    }
+  },
+  "resolutions": {
+    "jquery": ">= 1.9.0"
+  },
+  "homepage": "https://github.com/mozu/core-theme",
+  "_release": "5.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v5.0.0",
+    "commit": "d74ec61818d7765d862451ae6e05097ebdd5c244"
+  },
+  "_source": "git://github.com/mozu/core-theme.git",
+  "_target": "^5",
+  "_originalSource": "mozu/core-theme",
+  "_direct": true
+}

@@ -3,21 +3,10 @@
     "name": "[name of your theme]",
     "extends": "core4",
     "isDesktop": true,
-    "isMobile": true
+    "isMobile": true,
+    "version": ""
   },
-	
-    "settings": {
-
-      
-    },
-   
-    "pageTypes": [
-
-      
-    ],
-   
-    "widgets": [
-	
-	
-	]
+  "settings": {},
+  "pageTypes": [],
+  "widgets": []
 }

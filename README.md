@@ -8,36 +8,27 @@ build tooling requirements
 
 This theme comes with a great set of build tools. To use them, here's what you need.
 
-* NodeJS > 0.10.0 (for JS compression and the whole build process)
-* Grunt-CLI
+* NodeJS > 0.10.0 
+* Git or another command-line-based version control system if you want to control versioning with packages
 
 getting started
 ---------------
 
 If you want to use the build tools (and you very do), run the following:
 ```bash
-  $ npm install -g grunt-cli
-```
-The global GruntJS command line client should install from Node Package Manager. Then, install the local dependencies specified in `package.json`:
-```bash
-  $ npm install
+  node configure.js
 ```
 
-Local dependencies should all install. You can now use Grunt to lint, compile, and zip your theme!
+This should install two global command line utilities, Grunt (for running build tasks) and Bower (for managing frontend packages). It should then install local development dependencies for your theme in the `node_modules` folder (don't check in this folder!) and the Core4 and Core5 themes in the `references` folder.
 
-### simple build without JS compression (for quick tests)
+### Build theme
 ```bash
-$ grunt
-```
-
-### build with JS compression and commit tag
-```bash
-$ grunt build
+grunt
 ```
 
 ### build and update all resources to a new version number
 ```bash
-$ grunt release --to <version>
+grunt release --to <version>
 ```
 
 ### for source control versioning integration edit the following line in the gruntfile.js

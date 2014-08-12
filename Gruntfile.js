@@ -7,7 +7,7 @@ module.exports = function(grunt) {
     'labels/*.json'
   ],
     jsFiles = [
-    'gruntfile.js',
+    'Gruntfile.js',
     'build.js',
     'scripts/**/*.js'
   ],
@@ -84,7 +84,7 @@ grunt.initConfig({
       },
       javascript: {
         files: jsFiles,
-        tasks: ['jshint']
+        tasks: ['jshint','zubat']
       },
       compress: {
         files: filesToArchive,
@@ -109,7 +109,8 @@ grunt.initConfig({
     }
   });
 
-  ['grunt-jsonlint',
+  [
+   'grunt-jsonlint',
    'grunt-contrib-jshint',
    'grunt-contrib-watch',
    'grunt-contrib-compress'
@@ -117,7 +118,6 @@ grunt.initConfig({
 
   grunt.loadTasks('./tasks/');
 
-  grunt.registerTask('default', ['jsonlint', 'jshint', 'compress']);
-  grunt.registerTask('build', ['jsonlint', 'jshint', 'zubat', 'setver:build', 'compress', 'setver:renamezip']);
+  grunt.registerTask('default', ['jsonlint', 'jshint', 'zubat', 'setver:build', 'compress', 'setver:renamezip']);
   grunt.registerTask('release', ['jsonlint', 'jshint', 'zubat', 'setver:release', 'compress', 'setver:renamezip']);
 };
