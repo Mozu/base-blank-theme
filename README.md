@@ -1,7 +1,7 @@
 mozu-base-blank-theme
 =============
 
-A theme that extends Core4. A good starting point for Mozu theme development.
+A theme that extends the Mozu Core Theme. A good starting point for Mozu theme development.
 
 build tooling requirements
 --------------------------
