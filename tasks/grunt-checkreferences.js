@@ -13,7 +13,7 @@ module.exports = function(grunt) {
     ([4,5]).reduceRight(function(cb, ver) {
       var currentVersion;
       try {
-        currentVersion = JSON.parse(require('fs').readFileSync('./references/core' + ver + '/bower.json', 'utf-8')).version;
+        currentVersion = grunt.file.readJSON('./references/core' + ver + '/bower.json', 'utf-8').version;
       } catch(e) {
         console.log(e.message);
         grunt.fail.warn('Core' + ver + ' theme must be installed in order to update references.');
