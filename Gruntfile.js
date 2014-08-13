@@ -61,8 +61,8 @@ grunt.initConfig({
     zubat: {
       main: {
         dir: '.',
-        manualancestry: ['./references/Core4'],
-        ignore: ['\\references','\\.git','node_modules','^/resources','^/tasks','\\.zip$']
+        manualancestry: ['./references/core5'],
+        ignore: ['/references','\\.git','node_modules','^/resources','^/tasks','\\.zip$']
       }
     },
     compress: {
@@ -118,6 +118,7 @@ grunt.initConfig({
 
   grunt.loadTasks('./tasks/');
 
-  grunt.registerTask('default', ['jsonlint', 'jshint', 'checkreferences', 'zubat', 'setver:build', 'compress', 'setver:renamezip']);
+  grunt.registerTask('build', ['jsonlint', 'jshint', 'checkreferences', 'zubat', 'setver:build', 'compress', 'setver:renamezip']);
   grunt.registerTask('release', ['jsonlint', 'jshint', 'zubat', 'setver:release', 'compress', 'setver:renamezip']);
+  grunt.registerTask('default', ['build']);
 };
