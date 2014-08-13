@@ -18,7 +18,7 @@ This should install two global command line utilities, Grunt (for running build 
 
 ## Getting Started
 
-First, you'll want to create your new theme in the [Mozu Developer Center](https://developer.mozu.com/Console/theme). **The theme creation workflow in Developer Center no longer gives you a base blank theme to download. Instead, download a new copy of this theme (use the most current release in the [Releases](./releases) tab).**
+First, you'll want to create your new theme in the [Mozu Developer Center](https://developer.mozu.com/Console/theme). **The theme creation workflow in Developer Center no longer gives you a base blank theme to download. Instead, download a new copy of this theme (use the most current release in the [Releases](https://github.com/mozu/base-blank-theme/releases) tab).**
 
 Then, install the build tools by running the `node configure.js` command described in the above section.
 
