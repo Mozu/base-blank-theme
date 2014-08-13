@@ -1,7 +1,7 @@
 mozu-base-blank-theme
 =============
 
-A theme that extends Core4. A good starting point for Mozu theme development.
+A theme that extends Core4. A good starting point for Mozu theme development. Download the [latest **1.4.x** release here.](https://github.com/Mozu/base-blank-theme/releases). 
 
 build tooling requirements
 --------------------------
@@ -41,5 +41,6 @@ $ grunt release --to <version>
 ```
 
 ### for source control versioning integration edit the following line in the gruntfile.js
-```versionCmd = ':'; // ':' returns nothing. replace with e.g. 'git describe --tags --always' or 'svn info'
+```
+versionCmd = ':'; // ':' returns nothing. replace with e.g. 'git describe --tags --always' or 'svn info'
 ```
