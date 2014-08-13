@@ -4,7 +4,12 @@ module.exports = function(grunt) {
   grunt.registerTask('checkreferences', 'Check to see if core has updated', function() {
     var done = this.async(),
     semver = require('semver'),
-    bower = require('bower');
+    bower;
+    try {
+      bower = require('bower');
+    } catch(e) {
+      grunt.fail.warn('Bower is not installed. Please run `node configure.js` in this directory. If that script fails, try running `npm install -g bower && npm link bower` to install Bower directly.');
+    }
     ([4,5]).reduceRight(function(cb, ver) {
       var currentVersion;
       try {

@@ -24,6 +24,13 @@ module.exports = function(grunt) {
             grunt.log.ok('Updated package.json version to ' + newver);
             next(cb);
           },
+          bowerjson: function(cb) {
+            var themejson = grunt.file.readJSON('bower.json');
+            themejson.about.version = newver;
+            grunt.file.write('bower.json',JSON.stringify(themejson, null, 2));
+            grunt.log.ok('Updated bower.json version to ' + newver);
+            next(cb);
+          },
           themejson: function(cb) {
             var themejson = grunt.file.readJSON('theme.json');
             themejson.about.version = newver;
