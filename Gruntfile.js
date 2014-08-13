@@ -54,6 +54,7 @@ grunt.initConfig({
           module: true,
           define: true,
           require: true,
+          Modernizr: true,
           process: true
         }
       }
