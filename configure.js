@@ -1,34 +1,31 @@
 var childProcess = require('child_process');
   (function(cmds, done) {
-    return cmds.reduceRight(function(cb, cmd) {
+    return cmds.reduceRight(function(cb, command) {
       return function() {
-        console.log('\n>> ' + cmd.msg + "...");
-        childProcess.exec(cmd.cmd, function(err, stdout, stderr) {
-          if (err || stderr) {
-            console.error(err || stderr);
-            process.exit(1);
+        console.log('\n>> ' + command.msg + "...");
+        var cmd = command.cmd.split(' ');
+        var p = childProcess.spawn(cmd[0], cmd.slice(1), { stdio: 'inherit' });
+        p.on('close', function(code) {
+          if (code !== 0) {
+            console.error('\n>> Command `' + cmd.join(' ') + '` exited with code ' + code + '. Aborting rest of configure.');
+          } else {
+            cb();
           }
-          if (process.argv.pop() === "--verbose") console.log(stdout);
-          cb();
         });
       }
     }, done);
   })([
     {
       msg: 'Installing global Grunt',
-      cmd: 'npm install --silent -g grunt-cli'
+      cmd: 'npm install -g grunt-cli'
     },
     {
       msg: 'Installing global Bower',
-      cmd: 'npm install --silent -g bower'
+      cmd: 'npm install -g bower'
     },
     {
       msg: 'Installing local npm dependencies',
-      cmd: 'npm install --silent'
-    },
-    {
-      msg: 'Linking Bower for local references',
-      cmd: 'npm link bower --silent'
+      cmd: 'npm install'
     },
     {
       msg: 'Running grunt updatereferences task to install core theme references',
