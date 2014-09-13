@@ -9,7 +9,7 @@ module.exports = function(grunt) {
         return function() {
           grunt.util.spawn({
             cmd: 'bower',
-            args: ('install core' + ver + '=mozu/core-theme#^' + ver + ' --production --config.directory="references"').split(' ')
+            args: ('install core' + ver + '=mozu/core-theme#^' + ver + ' --production --config.directory=references').split(' ')
           }, cb);
         }
       }, done)();
