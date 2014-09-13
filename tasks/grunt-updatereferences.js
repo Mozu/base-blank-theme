@@ -7,7 +7,7 @@ module.exports = function(grunt) {
       if (err) grunt.fail.warn('Cache clean failed: ' + err.message);
       ([4,5]).reduceRight(function(cb, ver) {
         return function() {
-          grunt.file.delete('./references/core' + ver);
+          if (grunt.file.exists('./references/core' + ver)) grunt.file.delete('./references/core' + ver);
           grunt.util.spawn({
             cmd: 'bower',
             args: ('install core' + ver + '=mozu/core-theme#^' + ver + ' -j --production --config.directory=references').split(' ')
