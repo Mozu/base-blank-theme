@@ -70,3 +70,13 @@ grunt setup-vcs-tagging --tagcmd="hg id -i"
 This command configures the build system so that zipfile names are appended with a Mercurial ID from a Mercurial repository instead of a Git repository.
 
 **Note: This command can only be run safely once, since it modifies code in the Gruntfile. To make this change manually, look for the variable `versionCmd` inside your `Gruntfile.js` file.**
+
+## Troubleshooting
+
+Issue               | Suggestion
+:------------------ | :---------
+**Configure script fails with `EACCES` error on `/usr/local` (OSX or Linux)** | If your `node configure.js` script fails on its first task (installing global Grunt), you may have a permissions issue installing global NPM modules. This is very common and a frequently advised solution is to run the install command with `sudo`. We advise instead to change the permissions appropriately on your `/usr/local` directory, which by convention should not contain privileged files. Run `sudo chmod -R 777 /usr/local` instead.
+**Configure script fails on `updatereferences` task (OSX or Linux)** | If your `node configure.js` script fails on its last task (running the `grunt updatereferences` task), you may not have Git installed. Often, your system will show a dialog suggesting that you install XCode to install Git. Installing XCode will work, though it takes a long time and is very large. You can also install the OSX git client directly, through http://git-scm.com/download/mac or through an OSX package manager like Homebrew.
+**Configure script fails on `npm link bower` task (Windows 7)** | You're running an old version of the build scripts that used `npm link`, a command which requires administrator access in Windows 7. The current version of the build tools doesn't use this command!
+**Configure script fails on `updatereferences` task (Windows)** | If your `node configure.js` script fails on its last task (running the `grunt updatereferences` task), you may not have Git installed. Install Git for Windows using a Windows package manager like Chocolatey, or through the installer at http://git-scm.com.
+
