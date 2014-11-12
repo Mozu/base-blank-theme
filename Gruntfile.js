@@ -26,6 +26,7 @@ module.exports = function(grunt) {
     'README.md',
     'theme.json',
     'theme-ui.json',
+    '*.ico',
     '*.png'
   ],
 
