@@ -1,6 +1,8 @@
 'use strict';
 
-module.exports = function(grunt) {
+var coreVersions = [4,5,6];
+
+var task = function(grunt) {
   grunt.registerTask('checkreferences', 'Check to see if core has updated', function() {
     var done = this.async(),
     semver = require('semver');
@@ -10,16 +12,15 @@ module.exports = function(grunt) {
     } catch(e) {
       return grunt.fail.fatal('Theme.json not found.');
     }
-    var activeVersion = ({
-      core4: 4,
-      core5: 5
-    })[themejson.about.extends.toLowerCase()];
+    var activeVersion = coreVersions.filter(function(ver) {
+      return themejson.about.extends.toLowerCase().trim() === "core" + ver;
+    })[0];
 
     if (!activeVersion) {
-      grunt.log.ok(grunt.log.wraptext(80, 'This theme does not extend Core4 or Core5 directly, so a reference check is unnecessary. If you extend Core in the upstream theme ' + themejson.about.extends + ', then keep references current in that theme.'));
+      grunt.log.ok(grunt.log.wraptext(80, 'This theme does not extend a Core theme directly, so a reference check is unnecessary. If you extend a Core theme in the upstream theme ' + themejson.about.extends + ', then keep references current in that theme.'));
       return done();
     }
-    ([4,5]).reduceRight(function(cb, ver) {
+    coreVersions.reduceRight(function(cb, ver) {
       var installedVersion;
       try {
         installedVersion = grunt.file.readJSON('./references/core' + ver + '/bower.json', 'utf-8').version;
@@ -46,4 +47,8 @@ module.exports = function(grunt) {
       }
     }, done)();
   });
-}
+};
+
+task.coreVersions = coreVersions;
+
+module.exports = task;

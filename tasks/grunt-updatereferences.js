@@ -1,11 +1,13 @@
 'use strict';
 
+var coreVersions = require('./grunt-checkreferences').coreVersions;
+
 module.exports = function(grunt) {
   grunt.registerTask('updatereferences', 'Update references folder with core theme and any other dependent themes', function() {
     var done = this.async();
     grunt.util.spawn({ cmd: 'bower', args: ['cache','clean'] }, function(err) {
       if (err) grunt.fail.warn('Cache clean failed: ' + err.message);
-      ([4,5]).reduceRight(function(cb, ver) {
+      coreVersions.reduceRight(function(cb, ver) {
         return function() {
           if (grunt.file.exists('./references/core' + ver)) grunt.file.delete('./references/core' + ver);
           grunt.util.spawn({
