@@ -1,6 +1,6 @@
 # The Mozu Base Blank Theme
 
-The Mozu Base Blank Theme extends the Mozu Core5 Theme. This theme is a good starting point for Mozu theme development. For information on the Mozu Core5 Theme, refer to the [Mozu Core5 Theme repository](https://github.com/Mozu/core-theme).
+The Mozu Base Blank Theme extends the Mozu Core6 Theme by default. This theme is a good starting point for Mozu theme development. For information on the Mozu Core Theme, refer to the [Mozu Core Theme repository](https://github.com/Mozu/core-theme).
 
 ## Build Tooling Requirements
 
@@ -14,7 +14,7 @@ If you want to use the build tools, run the following from a command line in you
   node configure.js
 ```
 
-This command installs two global command line utilities, Grunt (for running build tasks) and Bower (for managing frontend packages). This command also installs local development dependencies for your theme in the `node_modules` folder, and the Core4 and Core5 themes in the `references` folder.
+This command installs two global command line utilities, Grunt (for running build tasks) and Bower (for managing frontend packages). This command also installs local development dependencies for your theme in the `node_modules` folder, and the Core themes in the `references` folder.
 
 ## Getting Started
 
@@ -26,9 +26,9 @@ This command installs two global command line utilities, Grunt (for running buil
 
 ## Theme Development Best Practices
 
-*   Use the `references/core5` directory as a reference. The theme you're building inherits from the Core5 base theme by default. For each file you discover you need to override, copy the Core5 version from your `references/core5` folder and into the corresponding location in your own theme. 
+*   Use the `references/core6` directory as a reference. The theme you're building inherits from the Core6 base theme by default. For each file you discover you need to override, copy the Core6 version from your `references/core6` folder and into the corresponding location in your own theme. 
 
-*   Use the `references/core4` directory as a reference. If you're experienced building themes on Core4, you can use the side-by-side Core4 and Core5 directories to compare and contrast for relevant Core5 changes.
+*   Use the `references/core4` and `references/core5` directory as references. If you're experienced building themes on Core4 or Core5, you can use the side-by-side Core directories to compare and contrast for relevant Core6 changes.
 
 *   You should regularly synchronize your theme with the Mozu Dev Center. The build tools help you by automatically checking your scripts for common errors, then building a named and tagged zipfile for you to upload. If you have installed the build tools, the basic command you can run to do this is `grunt`.
 
@@ -53,7 +53,7 @@ grunt release --to 1.2.3
 ```
 Replace `1.2.3` with the desired version number.
 
-### Update your references directory with released patches or updates to the Core4 or Core5 themes
+### Update your references directory with released patches or updates to the Core themes
 ```bash
 grunt updatereferences
 ```
