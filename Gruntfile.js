@@ -34,6 +34,7 @@ versionCmd = ':'; // e.g. 'git describe --tags --always' or 'svn info'
 
 grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    theme: grunt.file.readJSON('theme.json'),
     jsonlint: {
       theme_json: {
         src: jsonFiles
@@ -63,7 +64,7 @@ grunt.initConfig({
     zubat: {
       main: {
         dir: '.',
-        manualancestry: ['./references/core5'],
+        manualancestry: ['./references/<%= theme.about.extends %>'],
         ignore: ['/references','\\.git','node_modules','^/resources','^/tasks','\\.zip$']
       }
     },
