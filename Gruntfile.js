@@ -12,22 +12,13 @@ module.exports = function(grunt) {
     'scripts/**/*.js'
   ],
     filesToArchive = [
-    'compiled/**',
-    'labels/**',
-    'resources/**',
-    'scripts/**',
-    'stylesheets/**',
-    'templates/**',
-    'build.js',
-    'CHANGELOG.md',
-    'Gruntfile.js',
-    'LICENSE',
-    'package.json',
-    'README.md',
-    'theme.json',
-    'theme-ui.json',
-    '*.ico',
-    '*.png'
+    '**',
+    '!node_modules/**',
+    '!references/**',
+    '!tasks/**',
+    '!configure.js',
+    '!Gruntfile.js',
+    "!*.zip"
   ],
 
 versionCmd = ':'; // e.g. 'git describe --tags --always' or 'svn info'
