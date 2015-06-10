@@ -1,6 +1,6 @@
 'use strict';
 
-var coreVersions = [4,5,6];
+var coreVersions = [4,5,6,7];
 
 var task = function(grunt) {
   grunt.registerTask('checkreferences', 'Check to see if core has updated', function() {
