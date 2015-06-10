@@ -1,6 +1,6 @@
 # The Mozu Base Blank Theme
 
-The Mozu Base Blank Theme extends the Mozu Core6 Theme by default. This theme is a good starting point for Mozu theme development. For information on the Mozu Core Theme, refer to the [Mozu Core Theme repository](https://github.com/Mozu/core-theme).
+The Mozu Base Blank Theme extends the Mozu Core7 Theme by default. This theme is a good starting point for Mozu theme development. For information on the Mozu Core Theme, refer to the [Mozu Core Theme repository](https://github.com/Mozu/core-theme).
 
 ## Build Tooling Requirements
 
@@ -26,9 +26,9 @@ This command installs two global command line utilities, Grunt (for running buil
 
 ## Theme Development Best Practices
 
-*   Use the `references/core6` directory as a reference. The theme you're building inherits from the Core6 base theme by default. For each file you discover you need to override, copy the Core6 version from your `references/core6` folder and into the corresponding location in your own theme. 
+*   Use the `references/core7` directory as a reference. The theme you're building inherits from the Core7 base theme by default. For each file you discover you need to override, copy the Core7 version from your `references/core7` folder and into the corresponding location in your own theme. 
 
-*   Use the `references/core4` and `references/core5` directory as references. If you're experienced building themes on Core4 or Core5, you can use the side-by-side Core directories to compare and contrast for relevant Core6 changes.
+*   Older versions of the Core theme will also be in the `references` directory, for use as references. If you're experienced building themes on Core4, Core5, or Core6, you can use the side-by-side Core directories to compare and contrast for relevant Core7 changes.
 
 *   You should regularly synchronize your theme with the Mozu Dev Center. The build tools help you by automatically checking your scripts for common errors, then building a named and tagged zipfile for you to upload. If you have installed the build tools, the basic command you can run to do this is `grunt`.
 
