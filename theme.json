@@ -1,7 +1,7 @@
 {
   "about": {
     "name": "Your Theme",
-    "extends": "core6",
+    "extends": "core7",
     "isDesktop": true,
     "isMobile": true,
     "version": "0.1.0"
